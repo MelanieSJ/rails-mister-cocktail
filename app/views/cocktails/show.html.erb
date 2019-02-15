@@ -1,0 +1,34 @@
+<div class="container">
+
+  <h3><%= @cocktail.name%></h3>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li> <%= dose.description %> | <%= dose.ingredient.name %>
+           <%= link_to "delete", dose_path(dose), method: :delete, class: 'fas fa-trash-alt'  %>
+
+
+        </li>
+      <% end %>
+    </ul>
+
+<%= link_to 'New dose', new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+<%= link_to 'Edit', edit_cocktail_path(@cocktail), class: "btn btn-primary" %>
+<%= link_to 'Back', cocktails_path, class: "btn btn-primary" %>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
